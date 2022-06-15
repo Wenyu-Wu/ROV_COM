@@ -1,0 +1,2 @@
+rov_datacom
+-DCATKIN_DEVEL_PREFIX=/home/davidwu/Research/rov_ws/devel -DCMAKE_INSTALL_PREFIX=/home/davidwu/Research/rov_ws/install -G Unix Makefiles
