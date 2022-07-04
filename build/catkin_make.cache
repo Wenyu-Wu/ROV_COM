@@ -1,2 +1,2 @@
-rov_datacom
+rov_datacom:vision_opencv-noetic/cv_bridge:vision_opencv-noetic/image_geometry:vision_opencv-noetic/opencv_tests:vision_opencv-noetic/vision_opencv
 -DCATKIN_DEVEL_PREFIX=/home/davidwu/Research/rov_ws/devel -DCMAKE_INSTALL_PREFIX=/home/davidwu/Research/rov_ws/install -G Unix Makefiles

@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  sensor_msgs
   message_generation
 )
 
@@ -73,6 +74,7 @@ add_message_files(
 generate_messages(
   DEPENDENCIES
   std_msgs
+  sensor_msgs
 )
 
 ################################################
@@ -167,6 +169,8 @@ catkin_install_python(PROGRAMS
   scripts/imu_sub.py
   scripts/imu_pub_2.py
   scripts/imu_sub_2.py
+  scripts/cam_pub.py
+  scripts/cam_sub.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

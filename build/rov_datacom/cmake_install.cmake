@@ -107,3 +107,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/rov_datacom" TYPE PROGRAM FILES "/home/davidwu/Research/rov_ws/build/rov_datacom/catkin_generated/installspace/imu_sub_2.py")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/rov_datacom" TYPE PROGRAM FILES "/home/davidwu/Research/rov_ws/build/rov_datacom/catkin_generated/installspace/cam_pub.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/rov_datacom" TYPE PROGRAM FILES "/home/davidwu/Research/rov_ws/build/rov_datacom/catkin_generated/installspace/cam_sub.py")
+endif()
+

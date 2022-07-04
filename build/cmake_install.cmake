@@ -131,6 +131,10 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/davidwu/Research/rov_ws/build/gtest/cmake_install.cmake")
+  include("/home/davidwu/Research/rov_ws/build/vision_opencv-noetic/opencv_tests/cmake_install.cmake")
+  include("/home/davidwu/Research/rov_ws/build/vision_opencv-noetic/vision_opencv/cmake_install.cmake")
+  include("/home/davidwu/Research/rov_ws/build/vision_opencv-noetic/cv_bridge/cmake_install.cmake")
+  include("/home/davidwu/Research/rov_ws/build/vision_opencv-noetic/image_geometry/cmake_install.cmake")
   include("/home/davidwu/Research/rov_ws/build/rov_datacom/cmake_install.cmake")
 
 endif()
