@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 import rospy
-from rov_datacom.msg import imu
+from sensor_msgs.msg import Imu
 
 def callback(data):
     rospy.loginfo(rospy.get_caller_id() + '\n' +  str(data))
+    
     
 def listener():
 
@@ -14,7 +15,7 @@ def listener():
     # run simultaneously.
     rospy.init_node('imu_listen', anonymous=True)
 
-    rospy.Subscriber("imu_data", imu, callback)
+    rospy.Subscriber("imu_topic", Imu, callback)
 
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()

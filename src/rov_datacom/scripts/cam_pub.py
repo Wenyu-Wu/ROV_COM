@@ -169,6 +169,10 @@ if __name__ == '__main__':
                     im_msg = bridge.cv2_to_imgmsg(frame,"bgr8")
                 except CvBridgeError as e:
                     print(e)
+                t_stamp = rospy.Time.now()
+                im_msg.header.stamp = t_stamp
+                im_msg.height = 1080
+                im_msg.width = 1920
                 img_pub.publish(im_msg)
                 r.sleep()
                 # rospy.loginfo("Published Video Frame")

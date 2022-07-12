@@ -154,13 +154,14 @@ if __name__ == '__main__':
         waited += 1
         print('\r  Frame not available (x{})'.format(waited), end='')
         cv2.waitKey(30)
-    print('\nSuccess!\nStarting streaming - press "q" to quit.')
+    print('\nSuccess!\nStarting streaming')
 
+    rospy.init_node("cam_topic")
+    img_pub = rospy.Publisher("cam_topic",Image,queue_size=1)
+    r = rospy.Rate(30)
     while True:
         if not rospy.is_shutdown():
             # Wait for the next frame to become available
-            rospy.init_node("cam_topic")
-            img_pub = rospy.Publisher("cam_topic",Image,queue_size=50)
             if video.frame_available():
                 frame = video.frame()
                 bridge = CvBridge()
@@ -168,7 +169,12 @@ if __name__ == '__main__':
                     im_msg = bridge.cv2_to_imgmsg(frame,"bgr8")
                 except CvBridgeError as e:
                     print(e)
+                t_stamp = rospy.Time.now()
+                im_msg.header.stamp = t_stamp
+                im_msg.height = 1080
+                im_msg.width = 1920
                 img_pub.publish(im_msg)
+                r.sleep()
                 # rospy.loginfo("Published Video Frame")
                 # Only retrieve and display a frame if it's new
                 # cv2.imshow('frame', frame)

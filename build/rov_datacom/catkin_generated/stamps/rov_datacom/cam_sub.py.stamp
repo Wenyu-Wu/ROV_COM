@@ -14,9 +14,11 @@ def cam_callback(data):
     except CvBridgeError as e:
         print(e)
     cv2.imshow("ROV Stream",cv_img)
-    pass
+    cv2.waitKey(3)
 
 rospy.init_node('cam_listen',anonymous=True)
 while not rospy.is_shutdown():
     rospy.Subscriber("cam_topic",Image,cam_callback)
     rospy.spin()
+print("shutting down")
+cv2.destroyAllWindows()
